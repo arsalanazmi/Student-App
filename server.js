@@ -17,6 +17,10 @@ app.use(express.urlencoded({extended: false}));
 app.use(cors());
 app.use("/students", studentRoute);
 
+if (process.env.NODE_ENV === "production"){
+  app.use(express.static("client/build"));
+}
+
 app.listen(PORT, () => {
   console.log(`Connected to port ${PORT}`);
 });
