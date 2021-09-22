@@ -35,7 +35,7 @@ const StudentTableRow = props => {
       });
   };
   return (
-    <Table className="table table-dark table-striped table-hover border table-bordered table-responsive">
+    <Table className="table table-dark table-striped table-hover border table-bordered col-12 col-sm-12 col-lg-12 table-responsive">
       <thead>
         <tr>
           <th>Name</th>
