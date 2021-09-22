@@ -16,7 +16,7 @@ const StudentTableRow = props => {
       .catch(error => {
         console.log(error);
       });
-  }, [students]);
+  }, []);
 
   const handleDelete = id => {
     axios.delete("/students/delete-student/" + id)
