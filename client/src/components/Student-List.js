@@ -35,40 +35,42 @@ const StudentTableRow = props => {
       });
   };
   return (
-    <Table className="table table-dark table-striped table-hover border table-bordered col-12 col-sm-12 col-lg-12 table-responsive">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Roll No</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      
-      <tbody>{students.map((list, i) => {
-        return (
-          <tr key={i}>
-            <td>{list.name}</td>
-            <td>{list.email}</td>
-            <td>{list.rollno}</td>
-
-            <td>
-              <Link to={"/edit-student/" + list._id}>
-                <Button className="edit-link">Edit</Button>
-              </Link>
-              <Button
-                size="sm"
-                variant="danger"
-                onClick={() => handleDelete(list._id)}
-              >
-                Delete
-        </Button>
-            </td>
+    <div class="table-scrollable">
+      <Table className="table table-dark table-striped table-hover border table-bordered col-12 col-sm-12 col-lg-12 table-responsive">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Roll No</th>
+            <th>Action</th>
           </tr>
-        )
-      })}
-      </tbody>
-    </Table>
+        </thead>
+
+        <tbody>{students.map((list, i) => {
+          return (
+            <tr key={i}>
+              <td>{list.name}</td>
+              <td>{list.email}</td>
+              <td>{list.rollno}</td>
+
+              <td>
+                <Link to={"/edit-student/" + list._id}>
+                  <Button className="edit-link">Edit</Button>
+                </Link>
+                <Button
+                  size="sm"
+                  variant="danger"
+                  onClick={() => handleDelete(list._id)}
+                >
+                  Delete
+        </Button>
+              </td>
+            </tr>
+          )
+        })}
+        </tbody>
+      </Table>
+    </div>
   );
 };
 
