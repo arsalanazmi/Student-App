@@ -27,7 +27,7 @@ const CreateStudent = () => {
         email: values.email,
         rollno: values.rollno
       };
-      axios.post('http://localhost:4000/students/create-student', studentObject)
+      axios.post('/students/create-student', studentObject)
         .then(data => {
           console.log(data)
           Swal.fire(

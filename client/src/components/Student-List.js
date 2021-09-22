@@ -9,7 +9,7 @@ const StudentTableRow = props => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/students/get-students")
+    axios.get("/students/get-students")
       .then(res => {
         setStudents(res.data)
       })
@@ -19,7 +19,7 @@ const StudentTableRow = props => {
   }, [students]);
 
   const handleDelete = id => {
-    axios.delete("http://localhost:4000/students/delete-student/" + id)
+    axios.delete("/students/delete-student/" + id)
       .then((data) => {
         if (data) {
           setStudents(students.filter(item => item._id !== id))

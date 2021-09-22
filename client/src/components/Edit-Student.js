@@ -11,7 +11,7 @@ const EditStudent = (props) => {
   const [student, setStudent] = useState({});
 
   useEffect(() => {
-    axios.get("http://localhost:4000/students/edit-student/" + id)
+    axios.get("/students/edit-student/" + id)
       .then((res) => {
         setStudent(res.data)
       })
@@ -43,7 +43,7 @@ const EditStudent = (props) => {
         email: values.email,
         rollno: values.rollno
       };
-      axios.put("http://localhost:4000/students/update-student/" + id, studentObject)
+      axios.put("/students/update-student/" + id, studentObject)
         .then(res => {
           if (res.data) {
             Swal.fire(
